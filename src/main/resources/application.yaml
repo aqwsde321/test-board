@@ -5,11 +5,12 @@ logging:
   level:
     com.fastcampus.projectboard: debug
     org.springframework.web.servlet: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    #org.hibernate.type.descriptor.sql.BasicBinder: trace  # Hibernate 5.x
+    org.hibernate.orm.jdbc.bind: TRACE # Hibernate 6.x
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/board
+    url: jdbc:mysql://192.168.0.66:3307/board
     username: jino
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
