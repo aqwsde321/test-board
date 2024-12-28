@@ -7,12 +7,14 @@ logging:
     org.springframework.web.servlet: debug
     #org.hibernate.type.descriptor.sql.BasicBinder: trace  # Hibernate 5.x
     org.hibernate.orm.jdbc.bind: TRACE # Hibernate 6.x
+#    org.springframework.boot.autoconfigure.data.rest: TRACE
+#    org.springframework.data: DEBUG
+#    org.springframework.data.rest: TRACE
+#    org.springframework.data.rest.webmvc: TRACE
+#    org.springframework.data.rest.core: TRACE
 
 spring:
   datasource:
-#    url: jdbc:h2:mem:testdb  # ??? H2 ??????
-#    driver-class-name: org.h2.Driver
-#    username: sa
     url: jdbc:mysql://192.168.0.66:3307/board
     username: jino
     password: 1234
@@ -24,9 +26,9 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-  h2:
-    console:
-      enabled: false
-      path: /h2-console  # H2 ?? ?? ??
   sql.init.mode: always
 
+  data:
+    rest:
+      basePath: /api
+      detection-strategy: annotated
